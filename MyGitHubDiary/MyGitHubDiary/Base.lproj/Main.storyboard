@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sxm-mR-Ux8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Repo Comments-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MasterViewController" customModule="desk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vIm-Ej-d7p">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e6k-nB-Dze">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6k-nB-Dze" id="OoI-k0-c0G">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Repo Comments" id="cgv-ps-mAd">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="pzY-SK-m1N"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MpF-dV-nvA">
+                            <connections>
+                                <action selector="addCommentButtonPressed:" destination="BYZ-38-t0r" id="FHL-wa-hWs"/>
+                                <segue destination="qzb-5y-2PU" kind="show" identifier="addCommentSegue" id="jt2-yy-R1L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addCommentButton" destination="MpF-dV-nvA" id="N3D-Mj-coD"/>
+                        <outlet property="tableViewMain" destination="vIm-Ej-d7p" id="FaU-gT-DAh"/>
+                        <segue destination="lD9-pm-FoA" kind="show" identifier="showDetails" id="V45-Va-SmJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="-97.601199400299862"/>
+        </scene>
+        <!--Add Comment View Controller-->
+        <scene sceneID="bEt-Pa-CSQ">
+            <objects>
+                <viewController id="qzb-5y-2PU" customClass="AddCommentViewController" customModule="desk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zt0-V0-buR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your text:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzK-vX-fAM">
+                                <rect key="frame" x="100" y="89" width="175" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-T5-KRW">
+                                <rect key="frame" x="105" y="589" width="164" height="30"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Coment"/>
+                                <connections>
+                                    <action selector="addCommentButtonPressed:" destination="qzb-5y-2PU" eventType="touchUpInside" id="yJt-ij-fJT"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UwQ-Am-0eX">
+                                <rect key="frame" x="35" y="130" width="305" height="436"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8319857732" green="0.92145264149999995" blue="0.92013836719999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6dc-T5-KRW" firstAttribute="leading" secondItem="C0B-pv-v4l" secondAttribute="leading" constant="96" id="4D2-Cz-iGJ"/>
+                            <constraint firstItem="UwQ-Am-0eX" firstAttribute="top" secondItem="AzK-vX-fAM" secondAttribute="bottom" constant="8" symbolic="YES" id="5ov-eW-pCM"/>
+                            <constraint firstItem="AzK-vX-fAM" firstAttribute="centerX" secondItem="C0B-pv-v4l" secondAttribute="centerX" id="67F-ZM-Ux7"/>
+                            <constraint firstItem="AzK-vX-fAM" firstAttribute="top" secondItem="C0B-pv-v4l" secondAttribute="top" constant="25" id="KR5-XK-SaZ"/>
+                            <constraint firstItem="6dc-T5-KRW" firstAttribute="centerX" secondItem="C0B-pv-v4l" secondAttribute="centerX" id="OMB-kw-aa9"/>
+                            <constraint firstItem="UwQ-Am-0eX" firstAttribute="leading" secondItem="C0B-pv-v4l" secondAttribute="leading" constant="35" id="la4-qc-BZL"/>
+                            <constraint firstItem="UwQ-Am-0eX" firstAttribute="centerX" secondItem="AzK-vX-fAM" secondAttribute="centerX" id="v5u-WK-i1M"/>
+                            <constraint firstItem="C0B-pv-v4l" firstAttribute="bottom" secondItem="6dc-T5-KRW" secondAttribute="bottom" constant="45" id="wd7-vT-FTI"/>
+                            <constraint firstItem="6dc-T5-KRW" firstAttribute="top" secondItem="UwQ-Am-0eX" secondAttribute="bottom" constant="26" id="yS1-uo-Utu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C0B-pv-v4l"/>
+                    </view>
+                    <connections>
+                        <outlet property="addCommentButton" destination="6dc-T5-KRW" id="e4V-VZ-pHt"/>
+                        <outlet property="addCommentTextView" destination="UwQ-Am-0eX" id="QUR-oC-MtQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GqB-c8-Tqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="-429"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="1Yv-Ef-rKw">
+            <objects>
+                <viewController id="lD9-pm-FoA" customClass="CommentViewController" customModule="desk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IXN-MK-Mg0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nan-iG-79v">
+                                <rect key="frame" x="16" y="88" width="343" height="340"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nan-iG-79v" firstAttribute="leading" secondItem="0kc-Jy-MBN" secondAttribute="leading" constant="16" id="017-0Y-2E5"/>
+                            <constraint firstItem="Nan-iG-79v" firstAttribute="top" secondItem="0kc-Jy-MBN" secondAttribute="top" constant="24" id="0yS-wY-jEV"/>
+                            <constraint firstItem="0kc-Jy-MBN" firstAttribute="trailing" secondItem="Nan-iG-79v" secondAttribute="trailing" constant="16" id="L9e-n7-DbD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0kc-Jy-MBN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mky-ka-PHz">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Eo0-Y1-BGz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="o7J-vE-Rdi">
+                            <connections>
+                                <action selector="editCommentButtonPressed:" destination="lD9-pm-FoA" id="ee2-hM-cl2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="comments" destination="Nan-iG-79v" id="knV-3u-Zhr"/>
+                        <outlet property="editCommentButton" destination="o7J-vE-Rdi" id="x1q-ZF-Hpd"/>
+                        <segue destination="Q97-85-BHd" kind="show" identifier="editCommentSegue" id="y54-01-iLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcP-MX-73T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2050" y="284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R2W-bO-aAO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sxm-mR-Ux8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mOV-kQ-D9A">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4dS-pN-Zuy" kind="relationship" relationship="rootViewController" id="UQ2-hG-Qcx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRk-8A-RW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-806" y="-98"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="pG0-mb-bvm">
+            <objects>
+                <viewController id="4dS-pN-Zuy" customClass="LogInViewController" customModule="desk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EZB-li-3yr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Issue Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CzR-Id-zQv">
+                                <rect key="frame" x="67" y="316" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repository Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azi-5E-e3K">
+                                <rect key="frame" x="67" y="265" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repo OwnerName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s70-g7-wto">
+                                <rect key="frame" x="67" y="215" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E16-ne-LJg"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8YY-vs-cCe">
+                                <rect key="frame" x="87" y="34" width="200" height="200"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTV-zN-L4f">
+                                <rect key="frame" x="152" y="366" width="70" height="30"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButnPressed:" destination="4dS-pN-Zuy" eventType="touchUpInside" id="HYj-rL-zrD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83137254901960778" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4t7-oA-hh5" firstAttribute="trailing" secondItem="s70-g7-wto" secondAttribute="trailing" constant="68" id="2dD-YP-lIN"/>
+                            <constraint firstItem="8YY-vs-cCe" firstAttribute="centerX" secondItem="4t7-oA-hh5" secondAttribute="centerX" id="Epj-PZ-cL4"/>
+                            <constraint firstItem="s70-g7-wto" firstAttribute="leading" secondItem="4t7-oA-hh5" secondAttribute="leading" constant="67" id="Ie4-mt-td7"/>
+                            <constraint firstItem="TTV-zN-L4f" firstAttribute="centerX" secondItem="CzR-Id-zQv" secondAttribute="centerX" id="Ikj-8d-dpE"/>
+                            <constraint firstItem="CzR-Id-zQv" firstAttribute="centerX" secondItem="8YY-vs-cCe" secondAttribute="centerX" id="Iql-QR-e0R"/>
+                            <constraint firstItem="TTV-zN-L4f" firstAttribute="leading" secondItem="4t7-oA-hh5" secondAttribute="leading" constant="152" id="JxQ-jj-6eS"/>
+                            <constraint firstItem="azi-5E-e3K" firstAttribute="centerX" secondItem="8YY-vs-cCe" secondAttribute="centerX" id="L7X-s4-ibi"/>
+                            <constraint firstItem="CzR-Id-zQv" firstAttribute="top" secondItem="azi-5E-e3K" secondAttribute="bottom" constant="20.5" id="LCN-JM-QOn"/>
+                            <constraint firstItem="TTV-zN-L4f" firstAttribute="top" secondItem="CzR-Id-zQv" secondAttribute="bottom" constant="20" id="Mim-W0-UEB"/>
+                            <constraint firstItem="azi-5E-e3K" firstAttribute="height" secondItem="s70-g7-wto" secondAttribute="height" id="RJD-rb-sJ8"/>
+                            <constraint firstItem="s70-g7-wto" firstAttribute="bottom" secondItem="8YY-vs-cCe" secondAttribute="bottom" constant="10.5" id="Sav-wH-pMY"/>
+                            <constraint firstItem="azi-5E-e3K" firstAttribute="top" secondItem="s70-g7-wto" secondAttribute="bottom" constant="20.5" id="UzW-ci-V8E"/>
+                            <constraint firstItem="s70-g7-wto" firstAttribute="centerX" secondItem="8YY-vs-cCe" secondAttribute="centerX" id="Y9A-El-cgB"/>
+                            <constraint firstItem="azi-5E-e3K" firstAttribute="width" secondItem="s70-g7-wto" secondAttribute="width" id="aUS-5K-Dm7"/>
+                            <constraint firstItem="8YY-vs-cCe" firstAttribute="top" secondItem="4t7-oA-hh5" secondAttribute="top" constant="-30" id="aZj-1f-5HE"/>
+                            <constraint firstItem="CzR-Id-zQv" firstAttribute="width" secondItem="s70-g7-wto" secondAttribute="width" id="uAi-L4-mh5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4t7-oA-hh5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CVT-V0-Ys9"/>
+                    <connections>
+                        <outlet property="gitHubOwnerNameTextField" destination="s70-g7-wto" id="ASu-AL-twf"/>
+                        <outlet property="issueNumberTextField" destination="CzR-Id-zQv" id="HbT-BY-mfO"/>
+                        <outlet property="logInImg" destination="8YY-vs-cCe" id="94u-n6-fny"/>
+                        <outlet property="repositoryNameTextField" destination="azi-5E-e3K" id="dXc-VJ-uGZ"/>
+                        <outlet property="searchButn" destination="TTV-zN-L4f" id="8gY-GX-8OH"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="logInComplete" id="21l-LE-zQ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xia-ut-uMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="-98.50074962518741"/>
+        </scene>
+        <!--Edit Comment View Controller-->
+        <scene sceneID="pU6-v0-iNx">
+            <objects>
+                <viewController storyboardIdentifier="EditCommentView" id="Q97-85-BHd" customClass="EditCommentViewController" customModule="desk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gAa-II-jAy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change your coment:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux2-PW-Bpk">
+                                <rect key="frame" x="62.5" y="89" width="250" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-2g-Isd">
+                                <rect key="frame" x="105" y="589" width="164" height="30"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Edit Coment"/>
+                                <connections>
+                                    <action selector="editCommentButtonPressed:" destination="Q97-85-BHd" eventType="touchUpInside" id="aW8-OP-pbd"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B7S-N9-fE2">
+                                <rect key="frame" x="35" y="130" width="305" height="436"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8319857732" green="0.92145264149999995" blue="0.92013836719999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ux2-PW-Bpk" firstAttribute="centerX" secondItem="c5h-36-XkS" secondAttribute="centerX" id="3Zs-ni-uDf"/>
+                            <constraint firstItem="B7S-N9-fE2" firstAttribute="leading" secondItem="c5h-36-XkS" secondAttribute="leading" constant="35" id="7X6-po-PYl"/>
+                            <constraint firstItem="Ux2-PW-Bpk" firstAttribute="top" secondItem="c5h-36-XkS" secondAttribute="top" constant="25" id="FBV-6c-uGq"/>
+                            <constraint firstItem="6wF-2g-Isd" firstAttribute="centerX" secondItem="c5h-36-XkS" secondAttribute="centerX" id="HWM-Yy-O7R"/>
+                            <constraint firstItem="6wF-2g-Isd" firstAttribute="top" secondItem="B7S-N9-fE2" secondAttribute="bottom" constant="26" id="WPc-pI-qwj"/>
+                            <constraint firstItem="B7S-N9-fE2" firstAttribute="centerX" secondItem="Ux2-PW-Bpk" secondAttribute="centerX" id="aCz-Tj-ak4"/>
+                            <constraint firstItem="B7S-N9-fE2" firstAttribute="top" secondItem="Ux2-PW-Bpk" secondAttribute="bottom" constant="8" symbolic="YES" id="m9C-uF-7cO"/>
+                            <constraint firstItem="c5h-36-XkS" firstAttribute="bottom" secondItem="6wF-2g-Isd" secondAttribute="bottom" constant="45" id="zfi-Ma-fkt"/>
+                            <constraint firstItem="6wF-2g-Isd" firstAttribute="leading" secondItem="c5h-36-XkS" secondAttribute="leading" constant="96" id="zmy-uW-pFh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c5h-36-XkS"/>
+                    </view>
+                    <connections>
+                        <outlet property="editCommentButton" destination="6wF-2g-Isd" id="saT-6F-EJy"/>
+                        <outlet property="editCommentTextView" destination="B7S-N9-fE2" id="HAM-a0-4lN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekW-hy-sOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3086" y="284"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gitHubLogo" width="200" height="200"/>
+    </resources>
+</document>
