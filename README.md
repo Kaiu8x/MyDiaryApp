@@ -2,7 +2,7 @@
 
 ## Description
 
-My first iOS app. Using GitHub API and HTTP request to get comments of issues in a repository.
+My first iOS app, using GitHub API and HTTP request to get comments of issues in a repository.
 
 ## Functionalities
 
@@ -25,7 +25,7 @@ My first iOS app. Using GitHub API and HTTP request to get comments of issues in
 
 + Enable better parsing of JSON.
 + Better UI.
-+ Implement a search bar
++ Implement a search bar.
 + Allow to store global variables so there is no need to hardcode information.
 
 
