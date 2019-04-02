@@ -28,6 +28,10 @@ My first iOS app, using GitHub API and HTTP request to get comments of issues in
 + Implement a search bar.
 + Allow to store global variables so there is no need to hardcode information.
 
+## Comments
+
++ If it tells you that Info.plist is not found just go to general in project setting and selesct in Identity Choose Info.plist File... <https://stackoverflow.com/questions/52435202/build-input-file-cannot-be-found-swift-4-2-xcode-10-0>
+
 
 
 
